@@ -1,0 +1,32 @@
+programa {
+  funcao inicio() {
+    logico presenca[10]
+    cadeia nomes[10]
+    inteiro cont, totalFaltantes = 0, totalPresentes = 0
+
+    para(cont = 0; cont < 10; cont ++){
+      escreva("Digite o nome do ", cont + 1 , "° aluno(a):")
+      leia(nomes[cont])
+      escreva(nomes[cont], " está presente: ")
+      leia(presenca[cont])
+    }
+    para(inteiro contador = 0; contador < 10; contador ++){
+      se(presenca[contador] == verdadeiro){
+         totalPresentes ++
+      }senao se(presenca[contador] == falso){
+        totalFaltantes ++
+      }
+      }
+
+    escreva("-----LISTAGEM DE ALUNOS------\n")
+    escreva("Presentes: ", totalPresentes)
+    escreva("\nAusentes: ", totalFaltantes)
+
+    escreva("\n-----NOMES DOS AUSENTES-----\n")
+      para(cont = 0; cont < 10; cont ++){
+        se(presenca[cont] == falso){
+          escreva("O(a) aluno(a) ", nomes[cont], " faltou!\n")
+        }
+      }
+  }
+}

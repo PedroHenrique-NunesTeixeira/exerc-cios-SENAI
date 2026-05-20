@@ -1,0 +1,84 @@
+programa {
+  funcao inicio() {
+    inteiro valores[10] 
+     cadeia cores[10]
+     inteiro cont, soma = 0, media = 0, maior = 0, menor = 0
+     inteiro acimaMedia = 0
+     inteiro chuteMaior = 0, chuteMenor = 0, chuteSoma = 0, chuteMedia = 0
+     
+
+
+     escreva("Voce agora é o dragão, declare os valores das gemas e suas cores!\n")
+     para(cont = 0; cont < 10; cont ++){
+      escreva("Declare o valor da ", cont + 1, "° gema: ")
+      leia(valores[cont])
+      escreva("Declare a cor da ", cont + 1, "° gema: ")
+      leia(cores[cont])
+      se(valores[cont] > 7){
+        acimaMedia = acimaMedia + 1
+      }
+     }
+
+     //------SOMATORIAS------//
+
+     para(cont = 0; cont < 10; cont ++){
+      soma = soma + valores[cont]
+     }
+     media = soma / 10
+
+     maior = valores[0]
+      menor = valores[0]
+      para(cont = 0; cont < 10; cont ++){
+        se(valores[cont] > maior){
+          maior = valores[cont]
+        }senao se(valores[cont] < menor){
+          menor = valores[cont]
+        }
+      }
+    limpa()
+    escreva("Agora voce é o aventureiro! \n Acerte todas as perguntas abaixo e o cofre sera aberto! \n")
+    escreva("Chute qual era o valor da gema mais valiosa: ")
+    leia(chuteMaior)
+    escreva("Chute qual ara o valor da gema menos valiosa: ")
+    leia(chuteMenor)
+    escreva("Chute a soma total dos valores das gemas: ")
+    leia(chuteSoma)
+    escreva("Chute quantas gemas tem valores acima da media: ")
+    leia(chuteMedia)
+
+    se(chuteMaior == maior){
+      escreva("Parabens voce acertou qual era a gema mais valiosa!\n")
+    }senao{
+      escreva("Voce errou qual era a maior gema!\n")
+    }
+    se(chuteMenor == menor){
+      escreva("Parabens voce acertou qual era a gema menos valiosa!\n")
+    }senao{
+      escreva("Voce errou qual era a menor gema!\n")
+    }
+    se(chuteSoma == soma){
+      escreva("Parabens voce acertou qual era a soma das gemas!\n")
+    }senao{
+      escreva("Voce errou qual era a soma das gemas!\n")
+    }
+    se(chuteMedia == acimaMedia){
+      escreva("Parabens voce acertou qual era a media de todas as gemas!\n")
+    }senao{
+      escreva("Voce errou qual era a quantidade de gemas acima da media de todas as gemas!\n")
+    }
+
+    se(chuteMaior == maior e chuteMenor == menor e chuteSoma == soma e chuteMedia == acimaMedia){
+      escreva("Parabens voce e um genio do chute! \n")
+      escreva("O DRAGAO DIZ: O COFRE FOI ABERTO!")
+    }senao{
+      escreva("O cofre nao foi aberto!\n")
+      escreva("O dragao cuspiu fogo em voce!!!")
+    }
+
+    // CONTAGEM INVERSA 
+    para(cont = 9;cont >= 0; cont --){
+      escreva("Valor da  ", cont + 1 , "° gema: ", valores[cont], "\n")
+    }
+    }
+  }
+

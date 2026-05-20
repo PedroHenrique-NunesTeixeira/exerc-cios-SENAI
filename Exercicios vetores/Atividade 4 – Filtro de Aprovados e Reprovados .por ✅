@@ -1,0 +1,38 @@
+programa {
+  funcao inicio() {
+    cadeia nomes[8]
+     real notas[8]
+     cadeia aprovados[]
+     cadeia reprovados[]
+     inteiro cont
+     real soma = 0, media = 0
+
+     para(cont = 0; cont < 8; cont ++){
+      escreva("Digite o nome do ", cont + 1, "° aluno: ")
+      leia(nomes[cont])
+      escreva("Digite a nota do ", nomes[cont], ":")
+      leia(notas[cont])
+
+      enquanto(notas[cont] < 0 ou notas[cont] > 10){
+        escreva("São aceitadas notas apenas maiores que 0 e menores que 10!\n")
+        cont = 10
+        escreva("[ERROR]\n")
+        escreva("Reinicialize o programa e tente novamente!")
+      }
+     }
+     para(cont = 0;cont < 8; cont ++){
+      se(notas[cont] < 7){
+        // reprovados + 1
+        escreva("O aluno ", nomes[cont] , " com nota ", notas[cont], " foi reprovado!\n")
+      }senao se(notas[cont] > 7){
+        //aprovados + 1
+        escreva("O aluno ", nomes[cont] , " com nota ", notas[cont], " foi aprovado!\n")
+      }
+     }
+    para(cont = 0; cont < 8; cont ++){
+      soma = soma + notas[cont]
+    }
+    media = soma / 8
+    escreva("A média de notas da turma é: ", media)
+  }
+}

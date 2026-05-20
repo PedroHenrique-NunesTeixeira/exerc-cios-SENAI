@@ -1,0 +1,46 @@
+programa {
+  funcao inicio() {
+    real temperaturas[7] 
+    real maior = 0, menor = 0, media = 0
+    inteiro cont = 1
+
+    para(cont = 0; cont < 7; cont ++){
+      escreva("Digite a temperatura do ", cont + 1, "° dia:")
+      leia(temperaturas[cont])
+      limpa()
+    }
+
+    escreva("\n--------TEMPERATURAS REGISTRADAS DIARIAS--------\n")
+
+    para(cont = 0; cont < 7; cont ++){
+      escreva("temperatura do " , cont + 1 , "° dia: ", temperaturas[cont], "\n")
+    }
+     /*se (cont == 1){
+      maior = temperaturas 
+      menor = temperaturas
+    }se(temperaturas[cont] > maior){
+          maior = temperaturas[cont]
+        }senao se(temperaturas[cont] < menor){
+         menor = temperaturas[cont]
+        }*/ 
+
+      maior = temperaturas[0]
+      menor = temperaturas[0]
+      para(cont = 0; cont < 7; cont ++){
+        se(temperaturas[cont] > maior){
+          maior = temperaturas[cont]
+        }senao se(temperaturas[cont] < menor){
+          menor = temperaturas[cont]
+        }
+      }
+
+        media = (temperaturas[0] + temperaturas[1] + temperaturas[2] + temperaturas[3] + temperaturas[4] + temperaturas[5] + temperaturas[6])/ 7
+
+    escreva("\n-----MAIOR TEMPERATURA REGISTRADA NA SEMANA-------\n")
+    escreva(maior, "C°")
+    escreva("\n-----MENOR TEMPERATURA REGISTRADA NA SEMANA-------\n")
+    escreva(menor, "C°")
+    escreva("\n-------MÉDIA DAS TEMPERATURAS REGISTRADAS NA SEMANA-------\n")
+    escreva(media, "C°")
+  }
+}

@@ -1,0 +1,29 @@
+programa {
+  funcao inicio() {
+    inteiro pontos1[5], pontos2[5], pontos3[5], total[5]
+    inteiro cont 
+    cadeia ganhador
+    inteiro maiorPontuacao = 0, indiceVencedor = 0
+
+    para(cont = 0; cont < 5; cont ++){
+      escreva("Determine quantos pontos o jogador ", cont + 1, " fez na 1° rodada: ")
+      leia(pontos1[cont])
+    }
+    para(cont = 0; cont < 5; cont ++){
+      escreva("Determine quantos pontos o jogador ", cont + 1, " fez na 2° rodada: ")
+      leia(pontos2[cont])
+    }
+    para(cont = 0; cont < 5; cont ++){
+      escreva("Determine quantos pontos o jogador ", cont + 1, " fez na 3° rodada: ")
+      leia(pontos3[cont])
+      total[cont] = pontos1[cont] + pontos2[cont] + pontos3[cont]
+    }
+      para(cont = 0; cont < 5; cont ++){
+        se(total[cont] > maiorPontuacao){
+          maiorPontuacao = total[cont]
+          indiceVencedor = cont
+        }
+      }
+      escreva("O ganhador foi o jogador N°: ", indiceVencedor + 1)
+  }
+}
